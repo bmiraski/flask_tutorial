@@ -19,5 +19,11 @@
         {% endif %}
       </header>
       <p class="body">{{ post['body'] }}</p>
+      <hr>
+      {% if g.user['id'] in like_list %}
+      <p class="likes">You liked this. Likes: {{ likes[0] }} <a href="{{ url_for('blog.unlike', id=post['id'], user_id=g.user['id']) }}">Unlike this.</a></p>
+      {% else %}
+      <p class="likes">Likes : {{ likes[0] }} <a href="{{ url_for('blog.like', id=post['id'], user_id=g.user['id']) }}">Like this.</a></p>
+      {% endif %}
     </article>
 {% endblock %}

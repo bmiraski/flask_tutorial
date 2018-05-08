@@ -20,6 +20,8 @@
         {% endif %}
       </header>
       <p class="body">{{ post['body'] }}</p>
+      <hr>
+      <p class="likes">Likes : {{ plikes[post['id']] }}</p>
     </article>
     {% if not loop.last %}
       <hr>
